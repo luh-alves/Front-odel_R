@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Saira+Condensed&display=swap');
+
+
+#FooterHome ul {
+    padding:0px;
+    margin:0px;
+    list-style:none;
+}
+
+#FooterHome ul li { display: inline; }
+
+#FooterHome ul li a {
+    padding: 2px 10px;
+    display: inline-block;
+    color: #ab1725;
+    text-decoration: none;
+    font-family: 'Saira Condensed', sans-serif;
+    
+
+}
+
+#FooterHome p{
+    color: #a8a8a8;
+    border-bottom:1.5px solid #ab1725;
+}
+
