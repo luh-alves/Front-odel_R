@@ -1,7 +1,13 @@
 
 @import url('https://fonts.googleapis.com/css?family=Saira+Condensed&display=swap');
 
-
+#menu{
+    margin-top: 50px;
+    float: right;
+}
+.logo{
+    margin-top: 50px;
+}
 #menu ul {
     padding:0px;
     margin:0px;

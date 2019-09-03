@@ -11,7 +11,7 @@ class Footer extends Component {
             <p className="Footer-intro">                  
             </p>            
             <div>
-                
+                Aqui o Footer Comum
             </div>
         </div>
 

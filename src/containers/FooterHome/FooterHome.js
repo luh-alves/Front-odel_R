@@ -1,19 +1,35 @@
 import React, { Component } from 'react';
 import './FooterHome.css';
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 class FooterHome extends Component {
     render() {
         return (
-            <div>
-            <nav id="FooterHome">
-                <ul>
-                    <li><a href="#">2.5s <p>From 0 to 100</p></a></li>
-                    <li><a href="#">420 mi <p>Miles range</p></a></li>
-                    <li><a href="#">250mp/h <p>Max speed</p></a></li>
-                </ul>
-            </nav>
-            </div>
+            <Row>
+                <Col xs>
+                    <div className='HomeFooterItem'>
+                        <span className="FeatureValue">2.5</span> s
+                        <p>From 0 to 100</p>
+                    </div>
+                </Col>
+
+                <Col xs>
+                    <div className='HomeFooterItem'>
+                        <span className="FeatureValue">420</span> mi
+                        <p>Miles range</p>
+                    </div>
+                </Col>
+
+                <Col xs>
+                    <div className='HomeFooterItem'>
+                        <span className="FeatureValue">250</span> mp/h
+                        <p>Max speed</p>
+                    </div>
+                </Col>
+            </Row>
         );
     }
 }
+
 export default FooterHome;
