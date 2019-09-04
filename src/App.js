@@ -20,7 +20,7 @@ class App extends Component {
                     <BrowserRouter>
                         <Switch>
                             <Route path="/" exact={true} component={HomeScreen} />
-                            <Route path="/enginescreen" component={EngineScreen} />
+                            <Route path="/engine" component={EngineScreen} />
                         </Switch>
                     </BrowserRouter>
                 </Container>
@@ -30,7 +30,8 @@ class App extends Component {
                     <BrowserRouter>
                         <Switch>
                             <Route path="/" exact={true} component={FooterHome} />
-                            <Route component={Footer} />
+                            <Route path="/resume" exact={true} component={null} />
+                            <Route component={Footer} />                         
                         </Switch>
                     </BrowserRouter>
                 </Container>

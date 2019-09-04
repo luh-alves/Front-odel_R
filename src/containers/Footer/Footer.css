@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Saira+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Saira+Condensed:300&display=swap');
+
+.FooterIntemContainer {
+    display: flex;
+    align-items: center;
+}
+
+.RightPositioned{
+    width: 100%;
+    text-align: right;
+}
+
+.FooterItem {
+    color: #0f1c2d;
+    text-decoration: none;
+    font-family: 'Saira Condensed', sans-serif;
+}
+
+.Color {
+    width: 20px;
+    height: 20px;
+}
+
+.Wheels {
+    width: 25px;
+    height: 20px;
+}
+
+.Arrow {
+    width: 18px;
+    height: 15px;
+}
+.TotalLabel{
+    display: block;
+}
+
+.TotalValue {
+    display: block;
+    color: #ab1725;
+    font-size: 1.2em;
+    font-family: 'Saira Condensed', sans-serif;
+}

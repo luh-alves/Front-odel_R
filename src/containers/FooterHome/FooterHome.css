@@ -1,20 +1,32 @@
 @import url('https://fonts.googleapis.com/css?family=Saira+Condensed&display=swap');
 
 
-.HomeFooterItem  {
-    display: table;
-    margin: 0 auto;
+.HomeFooterItem {
     color: #ab1725;
     text-decoration: none;
     font-family: 'Saira Condensed', sans-serif;
 }
-.FeatureValue{
+
+.CenterPositioned {
+    display: table;
+    margin: 0 auto;
+}
+
+.LeftPositioned {
+    float: left;
+}
+
+.RightPositioned {
+    float: right;
+    
+}
+
+.FeatureValue {
     font-size: 2em;
 }
 
-.HomeFooterItem p{
+.HomeFooterItem p {
     color: #a8a8a8;
-    border-bottom:1.5px solid #ab1725;  
-   
+    border-bottom: 2px solid #ab1725;
 }
 
