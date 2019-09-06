@@ -1,16 +1,37 @@
 .RadioLayout {
     margin-bottom: 3rem;
+
 }
 
 /* The container */
 .RadioContainer {
-    display: block;
+    display: flex;
     height: 5rem;
     padding: 20px;
     cursor: pointer;
     user-select: none;
     background-color: #f6f6f6;
     border-radius: 5px;
+    font-family: 'SairaCondensed-Regular', sans-serif;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 35px;
+}
+
+.Grey {
+    color: #a8a8a8;
+}
+
+.Black {
+    color: #0f1c2d;
+}
+
+.ModelType {
+    font-family: 'SairaCondensed-Medium', sans-serif;
+}
+
+.Red {
+    color: #AB1725;
 }
 
 /* Hide the browser's default radio button */
@@ -52,13 +73,9 @@
     display: block;
 }
 
-.KilowattsModel {}
-
-.ModelType {}
-
-.Kilowatts {}
-
-.MilesRange {}
+.KilowattsModel {
+    font-size: 1.3em;
+}
 
 .AdditionalPrice {
     float: right;

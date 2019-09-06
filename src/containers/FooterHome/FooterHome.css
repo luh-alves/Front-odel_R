@@ -1,10 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Saira+Condensed&display=swap');
-
-
 .HomeFooterItem {
     color: #ab1725;
     text-decoration: none;
-    font-family: 'Saira Condensed', sans-serif;
+    font-family: 'SairaCondensed-Light', sans-serif;
 }
 
 .CenterPositioned {
