@@ -27,10 +27,8 @@
     text-decoration: none;
     font-family: 'Saira Condensed', sans-serif;
     font-size: 1em;
-}
-
-.Menu ul li a {
     border-bottom: 2px solid transparent;
+
 }
 
 .Menu ul li a:hover {
