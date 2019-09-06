@@ -1,0 +1,23 @@
+{
+    "model": {
+        "price": 63000,
+        "engine": {
+            "type": "P",
+            "kwh": 75,
+            "range": 275,
+            "price": 0,
+            "id": 1
+        },
+        "color": {
+            "hexadecimal": "#AB1725",
+            "label": "Metalic Vermilion",
+            "price": 0,
+            "id": 6
+        },
+        "wheels": {
+            "label": "20” Silver Metalic",
+            "price": 0,
+            "id": 7
+        }
+    }
+}

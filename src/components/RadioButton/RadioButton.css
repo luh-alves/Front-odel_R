@@ -1,0 +1,66 @@
+.RadioLayout {
+    margin-bottom: 3rem;
+}
+
+/* The container */
+.RadioContainer {
+    display: block;
+    height: 5rem;
+    padding: 20px;
+    cursor: pointer;
+    user-select: none;
+    background-color: #f6f6f6;
+    border-radius: 5px;
+}
+
+/* Hide the browser's default radio button */
+.RadioContainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.Checkmark {
+    position: relative;
+    float: right;
+    height: 25px;
+    width: 25px;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.RadioContainer:hover input~.Checkmark {
+    background-color: #eee;
+}
+
+/* When the radio button is checked, add a blue background */
+.RadioContainer input:checked~.Checkmark {
+    background-color: #AB1725;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.Checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.RadioContainer input:checked~.Checkmark:after {
+    display: block;
+}
+
+.KilowattsModel {}
+
+.ModelType {}
+
+.Kilowatts {}
+
+.MilesRange {}
+
+.AdditionalPrice {
+    float: right;
+    color: #AB1725;
+}

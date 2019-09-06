@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Saira+Condensed&display=swap');
 
+.Engine{
+  margin-bottom: -6rem;
+}
+
 .EngineTitle{
   font-family: 'Saira Condensed', sans-serif;
   color: #0f1c2d;
 }  
 
 .EngineImage{
-  margin-top: -140px;
+  margin-top: -8rem;
 }

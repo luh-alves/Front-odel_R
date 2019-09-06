@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Saira+Condensed&display=swap');
 
-.Header{
+.Header {
     margin-top: 50px;
 }
+
 .MenuContainer {
     overflow: hidden;
     white-space: nowrap;
@@ -25,7 +26,11 @@
     color: #a8a8a8;
     text-decoration: none;
     font-family: 'Saira Condensed', sans-serif;
-    font-size: 1.3em;
+    font-size: 1em;
+}
+
+.Menu ul li a {
+    border-bottom: 2px solid transparent;
 }
 
 .Menu ul li a:hover {

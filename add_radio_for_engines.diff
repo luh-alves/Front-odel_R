@@ -1,0 +1,225 @@
+diff --git a/package.json b/package.json
+index 31227c6..ee5dcae 100644
+--- a/package.json
++++ b/package.json
+@@ -7,7 +7,7 @@
+     "react": "^16.9.0",
+     "react-bootstrap": "^1.0.0-beta.12",
+     "react-dom": "^16.9.0",
+-    "react-radio-buttons": "^1.2.2",
++    "react-radio-group": "^3.0.3",
+     "react-router-dom": "^5.0.1",
+     "react-scripts": "3.1.1",
+     "react-tabs": "^3.0.0"
+diff --git a/src/components/RadioButton/RadioButton.css b/src/components/RadioButton/RadioButton.css
+index e69de29..aa02264 100644
+--- a/src/components/RadioButton/RadioButton.css
++++ b/src/components/RadioButton/RadioButton.css
+@@ -0,0 +1,73 @@
++.RadioLayout {
++    margin-bottom: 3rem;
++}
++
++/* The container */
++.RadioContainer {
++    display: block;
++    height: 5rem;
++    padding: 20px;
++    cursor: pointer;
++    user-select: none;
++    background-color: #f6f6f6;
++    border-radius: 5px;
++}
++
++/* Hide the browser's default radio button */
++.RadioContainer input {
++    position: absolute;
++    opacity: 0;
++    cursor: pointer;
++}
++
++/* Create a custom radio button */
++.Checkmark {
++    position: relative;
++    float: right;
++    height: 25px;
++    width: 25px;
++    background-color: #ffffff;
++    border-radius: 50%;
++}
++
++/* On mouse-over, add a grey background color */
++.RadioContainer:hover input ~ .Checkmark {
++    background-color: #eee;
++}
++
++/* When the radio button is checked, add a blue background */
++.RadioContainer input:checked ~ .Checkmark {
++    background-color: #AB1725;
++}
++
++/* Create the indicator (the dot/circle - hidden when not checked) */
++.Checkmark:after {
++    content: "";
++    position: absolute;
++    display: none;
++}
++
++/* Show the indicator (dot/circle) when checked */
++.RadioContainer input:checked ~ .Checkmark:after {
++    display: block;
++}
++
++.KilowattsModel {
++
++}
++
++.ModelType {
++
++}
++
++.Kilowatts {
++
++}
++
++.MilesRange {
++
++}
++.AdditionalPrice{
++    float: right;
++    color: #AB1725;
++}
+\ No newline at end of file
+diff --git a/src/components/RadioButton/RadioButton.js b/src/components/RadioButton/RadioButton.js
+index e69de29..30959e2 100644
+--- a/src/components/RadioButton/RadioButton.js
++++ b/src/components/RadioButton/RadioButton.js
+@@ -0,0 +1,24 @@
++import React, {Component} from 'react';
++import {Radio} from "react-radio-group";
++
++
++class RadioButton extends Component {
++    render() {
++        return (
++            <div className="RadioLayout">
++                <label className="RadioContainer">
++                    <span className="KilowattsModel">{this.props.engine.kwh}</span>
++                    <span className="ModelType">{this.props.engine.type}</span>
++                    <span className="Kilowatts">{this.props.engine.kwh} kwh</span>
++                    <span className="MilesRange">{this.props.engine.range} miles range</span>
++                    <Radio value={this.props.engine.kwh} id={this.props.engine.id} checked={this.props.engine.id===1}/>
++                    <span className="Checkmark"/>
++                </label>
++                {this.props.engine.price > 0 && this.props.selected === this.props.engine.kwh ?
++                    <span className="AdditionalPrice">+ {this.props.engine.price}</span> : null}
++            </div>
++        );
++    }
++}
++
++export default RadioButton;
+\ No newline at end of file
+diff --git a/src/containers/Header/Header.css b/src/containers/Header/Header.css
+index 15241ae..118e0dd 100644
+--- a/src/containers/Header/Header.css
++++ b/src/containers/Header/Header.css
+@@ -28,6 +28,10 @@
+     font-size: 1.3em;
+ }
+ 
++.Menu ul li a {
++    border-bottom: 2px solid transparent;
++}
++
+ .Menu ul li a:hover {
+     color: #0f1c2d;
+     border-bottom: 2px solid #ab1725;
+diff --git a/src/screens/EngineScreen/EngineScreen.js b/src/screens/EngineScreen/EngineScreen.js
+index 8b52236..3162382 100644
+--- a/src/screens/EngineScreen/EngineScreen.js
++++ b/src/screens/EngineScreen/EngineScreen.js
+@@ -1,18 +1,50 @@
+-import React, { Component } from 'react';
++import React, {Component} from 'react';
+ import './EngineScreen.css';
+-import { Link } from 'react-router-dom'
++import '../../components/RadioButton/RadioButton.css'
+ import Row from 'react-bootstrap/Row'
+ import Col from 'react-bootstrap/Col'
+ import EngineImage1 from '../../images/engine-1.png';
++import {RadioGroup} from "react-radio-group";
++import RadioButton from "../../components/RadioButton/RadioButton";
+ 
++const engines = [
++    {
++        "type": "P",
++        "kwh": 75,
++        "range": 275,
++        "price": 0,
++        "id": 1
++    },
++    {
++        "type": "S",
++        "kwh": 100,
++        "range": 355,
++        "price": 5500,
++        "id": 2
++    },
++    {
++        "type": "B",
++        "kwh": 125,
++        "range": 420,
++        "price": 10000,
++        "id": 3
++    }];
+ 
+ class EngineScreen extends Component {
++    constructor(props) {
++        super(props);
++        this.state = {selectedValue: engines[0].kwh};
++    }
++
++    onChange(selectedValue) {
++        this.setState({selectedValue: selectedValue})
++    }
++
+     render() {
+         return (
+             <div className="Engine">
+-                {/* <Link to="/">Ir para a página Home \o/</Link> */}
+                 <Row>
+-                    <Col md={{ span: 11, offset: 6 }}>
++                    <Col md={{span: 11, offset: 6}}>
+                         <div className='EngineTitle'>
+                             <h2> Engine </h2>
+                         </div>
+@@ -21,17 +53,25 @@ class EngineScreen extends Component {
+                 <Row>
+                     <Col xs>
+                         <div className='EngineImage'>
+-                            <img className='engine1' src={EngineImage1} />
++                            <img className='engine1' src={EngineImage1}/>
+                         </div>
+                     </Col>
+                     <Col xs>
+                         <div className='EngineOptions'>
+-                            <label></label>
++                            <RadioGroup
++                                name="engines"
++                                selectedValue={this.state.selectedValue}
++                                onChange={this.onChange.bind(this)}>
++
++                                {engines.map(engine => <RadioButton engine={engine}
++                                                                    selected={this.state.selectedValue}/>)}
++
++                            </RadioGroup>
+                         </div>
+                     </Col>
+                 </Row>
+ 
+-            </div >
++            </div>
+ 
+         );
+     }
