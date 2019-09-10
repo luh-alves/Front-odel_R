@@ -26,13 +26,12 @@ class EngineScreen extends Component {
     onChange(selectedValue) {
         this.setState({ selectedValue: selectedValue });
         const engine = this.findEngineByKwh(selectedValue);
-        
+
         this.props.updateEngineSelection(engine);
     }
     render() {
         return (
-            <div className="Engine">
-               
+            <div className="Engine">              
                 <Row>
                     <Col md={{ span: 3, offset: 6 }}>
                         <div className='EngineTitle'>

@@ -54,7 +54,7 @@ class Footer extends Component {
 
                     {this.props.model.color ?
                         <div className="FooterItem">
-                            <img className='Color' src={colors[this.props.model.color.id]} />
+                            <img className='ColorSize' src={colors[this.props.model.color.id]} />
                         </div>
                         : null}
                 </Col>
