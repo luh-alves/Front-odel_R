@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './ResumeScreen.css';
-import ColorScreen from '../ColorScreen/ColorScreen';
+
 
 
 class ResumeScreen extends Component {
@@ -18,4 +18,4 @@ class ResumeScreen extends Component {
     }
 }
 
-export default ColorScreen;
+export default ResumeScreen;

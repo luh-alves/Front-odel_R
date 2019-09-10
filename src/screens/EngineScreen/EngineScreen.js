@@ -7,42 +7,32 @@ import EngineImage1 from '../../images/engine-1.png';
 import { RadioGroup } from "react-radio-group";
 import RadioButton from "../../components/RadioButton/RadioButton";
 
-const engines = [
-    {
-        "type": "P",
-        "kwh": 75,
-        "range": 275,
-        "price": 0,
-        "id": 1
-    },
-    {
-        "type": "S",
-        "kwh": 100,
-        "range": 355,
-        "price": 5500,
-        "id": 2
-    },
-    {
-        "type": "B",
-        "kwh": 125,
-        "range": 420,
-        "price": 10000,
-        "id": 3
-    }];
 
 class EngineScreen extends Component {
     constructor(props) {
         super(props);
-        this.state = { selectedValue: engines[0].kwh };
+        this.state = { selectedValue: props.engines[0].kwh };
+    }
+
+    findEngineByKwh(kwh) {
+        for (let i = 0; i < this.props.engines.length; i++) {
+            const engine = this.props.engines[i];
+            if (engine.kwh === kwh) {
+                return engine;
+            }
+        }
     }
 
     onChange(selectedValue) {
-        this.setState({ selectedValue: selectedValue })
+        this.setState({ selectedValue: selectedValue });
+        const engine = this.findEngineByKwh(selectedValue);
+        
+        this.props.updateEngineSelection(engine);
     }
     render() {
         return (
             <div className="Engine">
-                {/* <Link to="/">Ir para a página Home \o/</Link> */}
+               
                 <Row>
                     <Col md={{ span: 3, offset: 6 }}>
                         <div className='EngineTitle'>
@@ -63,8 +53,8 @@ class EngineScreen extends Component {
                                 selectedValue={this.state.selectedValue}
                                 onChange={this.onChange.bind(this)}>
 
-                                {engines.map(engine => <RadioButton engine={engine}
-                                    selected={this.state.selectedValue} />)}
+                                {this.props.engines.map(engine => <RadioButton engine={engine}
+                                                                              selected={this.state.selectedValue}/>)}
                             </RadioGroup>
                         </div>
                     </Col>

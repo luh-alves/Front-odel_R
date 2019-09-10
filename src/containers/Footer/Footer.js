@@ -16,19 +16,24 @@ const wheels = {
     9: PerformanceCarbon
 };
 const colors = {
-    4:Red,
-    5:Blue,
-    6:Grey
+    4: Red,
+    5: Blue,
+    6: Grey
 };
 class Footer extends Component {
     render() {
+        let totalPrice = this.props.model.price
+        if (this.props.model.engine) {
+            totalPrice = totalPrice + this.props.model.engine.price
+        }
+
         return (
             <Row className='Footer'>
                 <Col xs className='FooterIntemContainer'>
                     <div className="FooterItem">
                         <span className='TotalLabel'>Total</span>
                         <span className='TotalValue'>$
-                        {this.props.model.price}</span>
+                        {totalPrice}</span>
                     </div>
                 </Col>
                 <Col xs className='FooterIntemContainer'>
@@ -38,26 +43,35 @@ class Footer extends Component {
                 </Col>
                 <Col xs className='FooterIntemContainer'>
 
-                    <div className="FooterItem">
-                        {this.props.model.engine.kwh}
-                        <span className='FooterEngineType'>{this.props.model.engine.type}</span>
-                    </div>
+                    {this.props.model.engine ?
+                        <div className="FooterItem">
+                            {this.props.model.engine.kwh}
+                            <span className='FooterEngineType'>{this.props.model.engine.type}</span>
+                        </div>
+                        : null}
                 </Col>
                 <Col xs className='FooterIntemContainer'>
 
-                    <div className="FooterItem">
-                        <img className='Color' src={colors[this.props.model.color.id]} />
-                    </div>
+                    {this.props.model.color ?
+                        <div className="FooterItem">
+                            <img className='Color' src={colors[this.props.model.color.id]} />
+                        </div>
+                        : null}
                 </Col>
                 <Col xs className='FooterIntemContainer'>
-                    <div className="FooterItem">
-                        <img className='Wheels' src={wheels[this.props.model.wheel.id]} />
-                    </div>
+                    {this.props.model.wheel ?
+                        <div className="FooterItem">
+                            <img className='Wheels' src={wheels[this.props.model.wheel.id]} />
+                        </div>
+                        : null}
                 </Col>
                 <Col xs className='FooterIntemContainer'>
                     <div className="FooterItem RightPositioned">
-                        <span className='Next'>next</span>
-                        <img className='Arrow' src={arrow} /></div>
+                        <button onClick={this.props.goToNextScreen}>
+                            <span className='Next'>next</span>
+                            <img className='Arrow' src={arrow} />
+                        </button>
+                    </div>
                 </Col>
 
             </Row>

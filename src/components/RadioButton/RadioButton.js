@@ -4,23 +4,23 @@ import './RadioButton.css';
 
 
 class RadioButton extends Component {
-    isCurrentSelected(){
+    isCurrentSelected() {
         return this.props.selected === this.props.engine.kwh;
     }
     render() {
         return (
             <div className="RadioLayout">
-                <label className={this.isCurrentSelected()? 'Black RadioContainer':'Grey RadioContainer' } >
+                <label className={this.isCurrentSelected() ? 'Black RadioContainer' : 'Grey RadioContainer'} >
                     <span className="KilowattsModel">
                         {this.props.engine.kwh}
-                        <span className={this.isCurrentSelected()? ' Red ModelType':'Grey ModelType'}> {this.props.engine.type}</span>
+                        <span className={this.isCurrentSelected() ? ' Red ModelType' : 'Grey ModelType'}> {this.props.engine.type}</span>
                     </span>
 
                     <span >{this.props.engine.kwh} kwh</span>
 
                     <span className="MilesRange">{this.props.engine.range} miles range</span>
 
-                    <Radio value={this.props.engine.kwh} id={this.props.engine.id} checked={this.props.engine.id === 1} />
+                    <Radio value={this.props.engine.kwh} id={this.props.engine.id} />
                     <span className="Checkmark" />
 
                 </label>
