@@ -11,10 +11,10 @@ class RadioButton extends Component {
         return (
             <div className="RadioLayout">
                 <label className={this.isCurrentSelected() ? 'Black RadioContainer' : 'Grey RadioContainer'} >
-                    <span className="KilowattsModel">
+                     <span className="KilowattsModel">
                         {this.props.engine.kwh}
                         <span className={this.isCurrentSelected() ? ' Red ModelType' : 'Grey ModelType'}> {this.props.engine.type}</span>
-                    </span>
+                    </span> 
 
                     <span >{this.props.engine.kwh} kwh</span>
 

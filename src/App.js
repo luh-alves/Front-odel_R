@@ -23,6 +23,7 @@ class App extends Component {
     }
 
     componentDidMount() {
+        //json-ajax
         loadModelR()
             .then(modelR => this.setState({ modelR: modelR, footerData: { price: modelR.price } }))
             .catch(alert)
@@ -35,7 +36,18 @@ class App extends Component {
     }
 
     updateColorSelection(selectedColor) {
+        // novo estado = estado atual
+        const newState = this.state;
+        newState.footerData.color = selectedColor;
+        this.setState(newState)
 
+    }
+
+    updateWheelSelection(selectedWheel) {
+        const newState = this.state;
+        newState.footerData.wheel = selectedWheel;
+        this.setState(newState)
+        
     }
 
     goToNextScreen() {
@@ -62,8 +74,9 @@ class App extends Component {
                         <Route path="/engine" render={(props) => <EngineScreen engines={this.state.modelR.engine.items}
                             updateEngineSelection={this.updateEngineSelection.bind(this)} />} />
                         <Route path="/color" render={(props) => <ColorScreen colors={this.state.modelR.color.items}
-                            updateEngineSelection={this.updateColorSelection.bind(this)} />} />
-                        <Route path="/wheel" render={(props) => <WheelScreen />} />
+                            updateColorSelection={this.updateColorSelection.bind(this)} />} />
+                        <Route path="/wheel" render={(props) => <WheelScreen wheels={this.state.modelR.wheels.items}
+                            updateWheelSelection={this.updateWheelSelection.bind(this)} />} />                            
                         <Route path="/resume" render={(props) => <ResumeScreen />} />
 
                     </Switch>

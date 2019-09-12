@@ -26,6 +26,12 @@ class Footer extends Component {
         if (this.props.model.engine) {
             totalPrice = totalPrice + this.props.model.engine.price
         }
+        if (this.props.model.color) {
+            totalPrice = totalPrice + this.props.model.color.price
+        }
+         if (this.props.model.wheel) {
+             totalPrice = totalPrice + this.props.model.wheel.price
+        }
 
         return (
             <Row className='Footer'>

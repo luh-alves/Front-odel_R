@@ -1,0 +1,47 @@
+.Wheel {
+    margin-bottom: -6rem;
+
+}
+
+.WheelTitle {
+    font-family: 'SairaCondensed-Light', sans-serif;
+    color: #0f1c2d;
+}
+
+.WheelsImages {
+    display: flex;
+    cursor: pointer;
+    user-select: none;
+    align-items: center;
+    justify-content: space-evenly;
+ 
+
+}
+.WheelSilver{
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.WheelSilver:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+}
+
+.WheelGrafitti{
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.WheelGrafitti:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+}
+.WheelPerformance{
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.WheelPerformance:hover{
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+}

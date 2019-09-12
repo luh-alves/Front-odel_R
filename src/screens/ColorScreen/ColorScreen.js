@@ -12,7 +12,7 @@ class ColorScreen extends Component {
         return (
             <div className="Color">
                 <Row>
-                    <Col md={{ span: 3, offset: 6 }}>
+                    <Col md={{ span: 4, offset: 7 }}>
                         <div className="ColorText">
                             <h2> Color</h2>
                             <p> The 2019 Model R have 3 unique metalic color options. Each color was meticulously developed to
@@ -26,16 +26,16 @@ class ColorScreen extends Component {
                         <div className="ColorImageCar">
                             <figure>
                                 <img className='ColorCarRed' src={ColorCarRed} />
-                            <figcaption>Metalic Vermilion</figcaption>
-                            <figcaption>Included</figcaption>
+                                <figcaption>Metalic Vermilion</figcaption>
+                                Included
                             </figure>
                         </div>
                     </Col>
                     <Col xs>
                         <div className="ColorImagesColors">
-                            <img className='ColorImageRed' src={ColorImageRed} />
-                            <img className='ColorImageBlue' src={ColorImageBlue} />
-                            <img className='ColorImageGrey' src={ColorImageGrey} />
+                            <img onClick={() => this.props.updateColorSelection(this.props.colors[0])} className='ColorImageRed' src={ColorImageRed} />
+                            <img onClick={() => this.props.updateColorSelection(this.props.colors[1])} className='ColorImageBlue' src={ColorImageBlue} />
+                            <img onClick={() => this.props.updateColorSelection(this.props.colors[2])} className='ColorImageGrey' src={ColorImageGrey} />
                         </div>
                     </Col>
                 </Row>
