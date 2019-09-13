@@ -6,12 +6,13 @@ import Col from 'react-bootstrap/Col'
 import EngineImage1 from '../../images/engine-1.png';
 import { RadioGroup } from "react-radio-group";
 import RadioButton from "../../components/RadioButton/RadioButton";
+import EngineImage2 from '../../images/engine-2.png';
 
 
 class EngineScreen extends Component {
     constructor(props) {
         super(props);
-        this.state = { selectedValue: props.engines[0].kwh };
+        this.state = { selectedValue: props.engines[0].kwh , engine:props.engines[0] };
     }
 
     findEngineByKwh(kwh) {
@@ -24,14 +25,17 @@ class EngineScreen extends Component {
     }
 
     onChange(selectedValue) {
-        this.setState({ selectedValue: selectedValue });
         const engine = this.findEngineByKwh(selectedValue);
-
         this.props.updateEngineSelection(engine);
+        this.setState({ selectedValue: selectedValue, engine: engine });
+    }
+
+    shouldShowFirstImage() {
+        return (this.state.engine.kwh === 75)
     }
     render() {
         return (
-            <div className="Engine">              
+            <div className="Engine">
                 <Row>
                     <Col md={{ span: 3, offset: 6 }}>
                         <div className='EngineTitle'>
@@ -42,7 +46,7 @@ class EngineScreen extends Component {
                 <Row>
                     <Col xs>
                         <div className='EngineImage'>
-                            <img className='engine1' src={EngineImage1} />
+                            <img className='EngineImage1' src={this.shouldShowFirstImage() ? EngineImage1 : EngineImage2} />
                         </div>
                     </Col>
                     <Col xs>
@@ -53,7 +57,7 @@ class EngineScreen extends Component {
                                 onChange={this.onChange.bind(this)}>
 
                                 {this.props.engines.map(engine => <RadioButton engine={engine}
-                                                                              selected={this.state.selectedValue}/>)}
+                                    selected={this.state.selectedValue} />)}
                             </RadioGroup>
                         </div>
                     </Col>

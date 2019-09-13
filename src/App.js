@@ -77,7 +77,7 @@ class App extends Component {
                             updateColorSelection={this.updateColorSelection.bind(this)} />} />
                         <Route path="/wheel" render={(props) => <WheelScreen wheels={this.state.modelR.wheels.items}
                             updateWheelSelection={this.updateWheelSelection.bind(this)} />} />                            
-                        <Route path="/resume" render={(props) => <ResumeScreen />} />
+                        <Route path="/resume" render={(props) => <ResumeScreen model={this.state.footerData} sdasdas=""/>} />
 
                     </Switch>
 
