@@ -15,12 +15,16 @@
   color: #ab1725;
 }
 
-.ModelRContainer h6 {
-  font-family: 'Saira Condensed-Light', sans-serif;
+.BeginText {
   color: #0f1c2d;
-  margin-top: -60px;
-
-
+  margin-top: -3rem;
+  font-family: 'SairaCondensed-Medium', sans-serif;
+  font-size: 1em;
+}
+.BeginImage{
+  width: 14px;
+  height: 12px;
+  margin-left: 10px;
 }
 
 .ModelRContainer {
@@ -31,4 +35,8 @@
 
 .redR {
   color: #ab1725;
+}
+.StyleButton{
+  background: transparent;
+  border: none;
 }
