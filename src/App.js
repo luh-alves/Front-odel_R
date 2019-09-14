@@ -18,36 +18,40 @@ import ResumeScreen from "./screens/ResumeScreen/ResumeScreen";
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = { modelR: { engine: { items: [{ kwh: 0 }] } }, footerData: {} };
+        this.state = { modelR: { engine: { items: [{ kwh: 0 }] } }, resumeData: {} };
         this.routes = ["/", "/engine", "/color", "/wheel", "/resume"]
     }
 
     componentDidMount() {
         //json-ajax
         loadModelR()
-            .then(modelR => this.setState({ modelR: modelR, footerData: { price: modelR.price } }))
+            .then(modelR => this.setState({ modelR: modelR, resumeData: { price: modelR.price } }))
             .catch(alert)
     }
 
     updateEngineSelection(selectedEngine) {
         const newState = this.state;
-        newState.footerData.engine = selectedEngine;
+        newState.resumeData.engine = selectedEngine;
         this.setState(newState)
     }
 
     updateColorSelection(selectedColor) {
         // novo estado = estado atual
         const newState = this.state;
-        newState.footerData.color = selectedColor;
+        newState.resumeData.color = selectedColor;
         this.setState(newState)
 
     }
 
     updateWheelSelection(selectedWheel) {
         const newState = this.state;
-        newState.footerData.wheel = selectedWheel;
+        newState.resumeData.wheel = selectedWheel;
         this.setState(newState)
-        
+
+    }
+    rebuild() {
+        this.props.history.push("/")
+        this.setState({ modelR: this.state.modelR, resumeData: { price:this.state. modelR.price } })
     }
 
     goToNextScreen() {
@@ -74,10 +78,12 @@ class App extends Component {
                         <Route path="/engine" render={(props) => <EngineScreen engines={this.state.modelR.engine.items}
                             updateEngineSelection={this.updateEngineSelection.bind(this)} />} />
                         <Route path="/color" render={(props) => <ColorScreen colors={this.state.modelR.color.items}
+                            description={this.state.modelR.color.description}
                             updateColorSelection={this.updateColorSelection.bind(this)} />} />
                         <Route path="/wheel" render={(props) => <WheelScreen wheels={this.state.modelR.wheels.items}
-                            updateWheelSelection={this.updateWheelSelection.bind(this)} />} />                            
-                        <Route path="/resume" render={(props) => <ResumeScreen model={this.state.footerData} sdasdas=""/>} />
+                            updateWheelSelection={this.updateWheelSelection.bind(this)} />} />
+                        <Route path="/resume" render={(props) => <ResumeScreen model={this.state.resumeData}
+                            onRebuild={this.rebuild.bind(this)} />} />
 
                     </Switch>
 
@@ -99,7 +105,7 @@ class App extends Component {
                     <Switch>
                         <Route path="/" exact={true} component={FooterHome} />
                         <Route path="/resume" exact={true} component={null} />
-                        <Route render={(props) => <Footer model={this.state.footerData}
+                        <Route render={(props) => <Footer model={this.state.resumeData}
                             goToNextScreen={this.goToNextScreen.bind(this)} />} />
                     </Switch>
 

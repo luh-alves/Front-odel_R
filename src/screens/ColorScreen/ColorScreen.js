@@ -12,7 +12,7 @@ import Col from 'react-bootstrap/Col'
 class ColorScreen extends Component {
     constructor(props) {
         super(props)
-        this.state = { colorCar: ColorCarRed, color: this.props.colors[0] }
+        this.state = { colorCar: ColorCarRed, color: this.props.colors[0]}
     }
 
     selectionColor(colorCar, color) {
@@ -30,7 +30,7 @@ class ColorScreen extends Component {
                     <Col md={{ span: 4, offset: 7 }}>
                         <div className="ColorText">
                             <h2> Color</h2>
-                            <p> The 2009 Model R have 3 unique metalic color options. Each color was meticulously developed to look like something completely new to your eyes. </p>
+                            <p>{this.props.description}</p>
                         </div>
                     </Col>
                 </Row>

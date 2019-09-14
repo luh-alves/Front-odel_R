@@ -8,6 +8,12 @@ import Col from 'react-bootstrap/Col'
 
 
 class WheelScreen extends Component {
+    constructor(props) {
+        super(props)
+      
+    }
+
+
     render() {
         return (
             <div className="Wheel">
@@ -21,9 +27,21 @@ class WheelScreen extends Component {
                 <Row>
                     <Col xs>
                         <div className="WheelsImages">
+                        <div>
                             <img onClick={() => this.props.updateWheelSelection(this.props.wheels[0])} className='WheelSilver' src={WheelSilver} />
+                            <figcaption>{this.props.wheels[0].label}</figcaption>
+                            <figcaption>Included</figcaption>
+                            </div>
+                            <div>
                             <img onClick={() => this.props.updateWheelSelection(this.props.wheels[1])} className='WheelGrafitti' src={WheelGrafitti} />
-                            <img onClick={() => this.props.updateWheelSelection(this.props.wheels[2])}className='WheelPerformance' src={WheelPerformance} />
+                            <figcaption>{this.props.wheels[1].label}</figcaption>
+                            <figcaption>{this.props.wheels[1].price}</figcaption>
+                            </div>
+                            <div>
+                            <img onClick={() => this.props.updateWheelSelection(this.props.wheels[2])} className='WheelPerformance' src={WheelPerformance} />
+                            <figcaption>{this.props.wheels[2].label}</figcaption>
+                            <figcaption>{this.props.wheels[2].price}</figcaption>
+                            </div>
 
                         </div>
                     </Col>
