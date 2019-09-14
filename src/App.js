@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Header from "./containers/Header/Header";
 import Divider from "./components/Divider/Divider";
 import Footer from "./containers/Footer/Footer"
-import FooterHome from "./containers/FooterHome/FooterHome";
+import HomeFooter from "./containers/HomeFooter/HomeFooter";
 import ColorScreen from './screens/ColorScreen/ColorScreen';
 import { loadModelR } from "./services/ModelRService";
 import { withRouter } from 'react-router';
@@ -103,7 +103,7 @@ class App extends Component {
                 <Container>
 
                     <Switch>
-                        <Route path="/" exact={true} component={FooterHome} />
+                        <Route path="/" exact={true} component={HomeFooter} />
                         <Route path="/resume" exact={true} component={null} />
                         <Route render={(props) => <Footer model={this.state.resumeData}
                             goToNextScreen={this.goToNextScreen.bind(this)} />} />

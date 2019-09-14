@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import './FooterHome.css';
+import './HomeFooter.css';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-class FooterHome extends Component {
+class HomeFooter extends Component {
     render() {
         return (
             <Row>
@@ -32,4 +32,4 @@ class FooterHome extends Component {
     }
 }
 
-export default FooterHome;
+export default HomeFooter;
