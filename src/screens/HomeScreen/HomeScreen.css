@@ -1,18 +1,22 @@
-
 .HomeTextContainer {
   margin-left: 20%;
 }
 
 .HomeTextContainer h1 {
-  font-family: 'SairaCondensed-Light', sans-serif;
+  margin-bottom: -7rem;
+} 
+
+.StyleText {
+  letter-spacing: 0.1em;
+  font-family: 'SairaCondensed-Regular', sans-serif;
+  color: #ab1725;
+  font-size: 2em;
+}
+.StyleModel {
+  letter-spacing: 0.1em;
+  font-family: 'SairaCondensed-Regular', sans-serif;
   color: #0f1c2d;
   font-size: 6em;
-  margin-bottom: -130px;
-}
-
-.HomeTextContainer h2 {
-  font-family: 'Saira Condensed-Light', sans-serif;
-  color: #ab1725;
 }
 
 .BeginText {
@@ -21,22 +25,55 @@
   font-family: 'SairaCondensed-Medium', sans-serif;
   font-size: 1em;
 }
-.BeginImage{
+.StyleBegin {
+  letter-spacing: 0.3em;
+}
+
+.StyleR {
+  font-family: 'SairaCondensed-Medium', sans-serif;
+  color: #ab1725;
+  
+}
+
+.BeginImage {
   width: 14px;
   height: 12px;
   margin-left: 10px;
 }
 
 .ModelRContainer {
-  display: table;
+  display: table; 
   margin: 0 auto;
   text-align: center;
 }
 
-.redR {
-  color: #ab1725;
-}
-.StyleButton{
+.StyleButton {
   background: transparent;
-  border: none;
+  border: transparent;
+  outline: transparent;
+  -webkit-appearance: none;
+}
+
+
+
+@media(max-width: 768px) {
+  .redR {
+    width: 503px;
+    height: 283px;
+  }
+
+}
+
+@media(max-width: 576px) {
+  .redR {
+    width: 377px;
+    height: 211px;
+  }
+  .StyleText {
+    font-size: 1em;
+
+  }
+  .StyleModel{
+    font-size: 3em;
+  }
 }

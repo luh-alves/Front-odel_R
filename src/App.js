@@ -51,7 +51,7 @@ class App extends Component {
     }
     rebuild() {
         this.props.history.push("/")
-        this.setState({ modelR: this.state.modelR, resumeData: { price:this.state. modelR.price } })
+        this.setState({ modelR: this.state.modelR, resumeData: { price: this.state.modelR.price } })
     }
 
     goToNextScreen() {
@@ -74,7 +74,7 @@ class App extends Component {
                 <Container className="ScreensContainer">
 
                     <Switch>
-                        <Route path="/" exact={true} component={HomeScreen} />
+                        <Route path="/" exact={true} render={(props) => <HomeScreen goToNextScreen={this.goToNextScreen.bind(this)} />} />
                         <Route path="/engine" render={(props) => <EngineScreen engines={this.state.modelR.engine.items}
                             updateEngineSelection={this.updateEngineSelection.bind(this)} />} />
                         <Route path="/color" render={(props) => <ColorScreen colors={this.state.modelR.color.items}

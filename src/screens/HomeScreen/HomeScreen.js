@@ -8,14 +8,14 @@ class HomeScreen extends Component {
         return (
             <div className='Home'>
                 <div className='HomeTextContainer'>
-                    <h2>Build your</h2>
-                    <h1>MODEL <span className='redR'>R</span> </h1>
+                    <h2 className ='StyleText'>Build your</h2>
+                    <h1 className='StyleModel'>MODEL <span className='StyleR'>R</span> </h1>
                 </div>
                 <div className='ModelRContainer'>
                     <img className='redR' src={redR} />
                     <div  className='BeginText'>
                         <button className='StyleButton' onClick={this.props.goToNextScreen}>
-                            <span>B E G I N  <img className='BeginImage' src={begin} /> </span>
+                            <span className='StyleBegin'>BEGIN  <img className='BeginImage' src={begin} /> </span>
                         </button>
                     </div>
                 </div>
