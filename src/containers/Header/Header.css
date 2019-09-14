@@ -1,5 +1,5 @@
 .Header {
-    margin-top: 50px;
+    margin-top: 4rem;
 }
 
 .MenuContainer {
@@ -32,4 +32,10 @@
 .Menu ul li a:hover {
     color: #0f1c2d;
     border-bottom: 2px solid #ab1725;
+}
+
+@media (max-width: 576px) {
+    .Header {
+        margin-top: 1em;
+    }
 }

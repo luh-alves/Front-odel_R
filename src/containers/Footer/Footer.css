@@ -7,10 +7,9 @@
     align-items: center;
 }
 
-.RightPositioned {
+.FooterItemRightPositioned {
     width: 100%;
     text-align: right;
-
 }
 
 .FooterItem {
@@ -32,7 +31,7 @@
 }
 
 .Wheels {
-    width: 25px;
+    width: 20px;
     height: 20px;
 }
 

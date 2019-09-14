@@ -1,61 +1,42 @@
- .Color{
-    margin-bottom: -6rem; 
-  
+.Color {
+    margin-bottom: -6rem;
+
 }
-.ColorText{
+
+.ColorText {
     font-family: 'SairaCondensed-Light', sans-serif;
     color: #0f1c2d;
-    
-}   
-  
-.ColorImageCar{
-    margin-top: -8rem;
-}  
 
-.ColorText p{
-    color: #a8a8a8;
-   
 }
 
-.ColorImagesColors{
-    display: flex;  
+.ColorImageCar {
+    margin-top: -8rem;
+}
+
+.ColorText p {
+    color: #a8a8a8;
+
+}
+
+.ColorImagesContainer {
+    display: flex;
     cursor: pointer;
     user-select: none;
     align-items: center;
     justify-content: space-evenly;
-    
-}  
-.ColorImagesColors img{
+}
+
+.ColorImagesContainer img {
     width: 35px;
     height: 35px;
 }
-.ColorImageRed:hover{
-    border: 6px solid #545555;
-	border-radius: 100%;
-	
-}
-.ColorImageRed {
-    border: 6px solid #e7e8e9;
-	border-radius: 100%;
 
-}
-.ColorImageBlue:hover{
-    border: 6px solid #545555;
-	border-radius: 100%;
-	
-}
-.ColorImageBlue {
+.ColorWithBorder {
     border: 6px solid #e7e8e9;
-	border-radius: 100%;
-
+    border-radius: 100%;
 }
-.ColorImageGrey:hover{
+
+.ColorWithBorderSelected {
     border: 6px solid #545555;
-	border-radius: 100%;
-	
-}
-.ColorImageGrey {
-    border: 6px solid #e7e8e9;
-	border-radius: 100%;
-
+    border-radius: 100%;
 }

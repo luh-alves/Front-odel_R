@@ -72,7 +72,7 @@ class Footer extends Component {
                         : null}
                 </Col>
                 <Col xs className='FooterIntemContainer'>
-                    <div className="FooterItem RightPositioned">
+                    <div className="FooterItem FooterItemRightPositioned">
                         <button onClick={this.props.goToNextScreen}>
                             <span className='Next'>next</span>
                             <img className='Arrow' src={arrow} />

@@ -1,79 +1,89 @@
 .HomeTextContainer {
-  margin-left: 20%;
+    margin-left: 20%;
 }
 
 .HomeTextContainer h1 {
-  margin-bottom: -7rem;
-} 
+    margin-bottom: -7rem;
+}
 
 .StyleText {
-  letter-spacing: 0.1em;
-  font-family: 'SairaCondensed-Regular', sans-serif;
-  color: #ab1725;
-  font-size: 2em;
+    letter-spacing: 0.1em;
+    font-family: 'SairaCondensed-Regular', sans-serif;
+    color: #ab1725;
+    font-size: 2em;
 }
+
 .StyleModel {
-  letter-spacing: 0.1em;
-  font-family: 'SairaCondensed-Regular', sans-serif;
-  color: #0f1c2d;
-  font-size: 6em;
+    letter-spacing: 0.1em;
+    font-family: 'SairaCondensed-Regular', sans-serif;
+    color: #0f1c2d;
+    font-size: 6em;
 }
 
 .BeginText {
-  color: #0f1c2d;
-  margin-top: -3rem;
-  font-family: 'SairaCondensed-Medium', sans-serif;
-  font-size: 1em;
+    color: #0f1c2d;
+    margin-top: -3rem;
+    font-family: 'SairaCondensed-Medium', sans-serif;
+    font-size: 1em;
 }
+
 .StyleBegin {
-  letter-spacing: 0.3em;
+    letter-spacing: 0.3em;
 }
 
 .StyleR {
-  font-family: 'SairaCondensed-Medium', sans-serif;
-  color: #ab1725;
-  
+    font-family: 'SairaCondensed-Medium', sans-serif;
+    color: #ab1725;
+
 }
 
 .BeginImage {
-  width: 14px;
-  height: 12px;
-  margin-left: 10px;
+    width: 14px;
+    height: 12px;
+    margin-left: 10px;
 }
 
 .ModelRContainer {
-  display: table; 
-  margin: 0 auto;
-  text-align: center;
+    display: table;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .StyleButton {
-  background: transparent;
-  border: transparent;
-  outline: transparent;
-  -webkit-appearance: none;
+    background: transparent;
+    border: transparent;
+    outline: transparent;
+    -webkit-appearance: none;
 }
 
 
-
-@media(max-width: 768px) {
-  .redR {
-    width: 503px;
-    height: 283px;
-  }
-
+@media (max-width: 768px) {
+    .redR {
+        width: 503px;
+        height: 283px;
+    }
 }
 
-@media(max-width: 576px) {
-  .redR {
-    width: 377px;
-    height: 211px;
-  }
-  .StyleText {
-    font-size: 1em;
+@media (max-width: 576px) {
+    .Home {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 25rem;
+    }
 
-  }
-  .StyleModel{
-    font-size: 3em;
-  }
+    .redR {
+        width: 314px;
+        height: 176px;
+        margin-top: 3em;
+    }
+
+    .StyleText {
+        font-size: 1em;
+
+    }
+
+    .StyleModel {
+        font-size: 3em;
+    }
 }

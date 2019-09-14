@@ -22,7 +22,7 @@ class FooterHome extends Component {
                 </Col>
 
                 <Col xs>
-                    <div className='HomeFooterItem RightPositioned'>
+                    <div className='HomeFooterItem HomeFooterItemRightPositioned'>
                         <span className="FeatureValue">250</span> mp/h
                         <p>Max speed</p>
                     </div>
