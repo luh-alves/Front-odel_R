@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './EngineScreen.css';
-import {Link} from 'react-router-dom'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import EngineImage1 from '../../images/engine-1.png';
@@ -50,8 +49,8 @@ class EngineScreen extends Component {
                 </Row>
                 <Row>
                     <Col xs>
-                        <div className='EngineImage'>
-                            <img className='EngineImage1'
+                        <div className='EngineImageContainer'>
+                            <img className='EngineImage'
                                  src={this.shouldShowFirstImage() ? EngineImage1 : EngineImage2}/>
                         </div>
                     </Col>

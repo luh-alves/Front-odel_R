@@ -7,6 +7,7 @@
 .CenterPositioned {
     display: table;
     margin: 0 auto;
+    
 }
 
 .LeftPositioned {
@@ -20,6 +21,7 @@
 
 .FeatureValue {
     font-size: 2em;
+    font-family: 'SairaCondensed-Medium', sans-serif;
 }
 
 .HomeFooterItem p {

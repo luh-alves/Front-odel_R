@@ -6,6 +6,19 @@ import Col from "react-bootstrap/Col";
 
 
 class Header extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {selectedMenu: 'model-r'};
+    }
+
+    onClick(clickedMenu) {
+        this.setState({selectedMenu: clickedMenu});
+    }
+
+    isCurrentSelected(menu) {
+        return this.state.selectedMenu === menu;
+    }
+
     render() {
         return (
             <Row className="Header">
@@ -15,11 +28,35 @@ class Header extends Component {
                 <Col className="MenuContainer">
                     <nav className="Menu">
                         <ul>
-                            <li><a href="#">Model R</a></li>
-                            <li><a href="#">Model IQ</a></li>
-                            <li><a href="#">Model Mobi</a></li>
-                            <li><a href="#">Model Charlie</a></li>
-                            <li><a href="#">Model Italy</a></li>
+                            <li>
+                                <a onClick={() => this.onClick('model-r')}
+                                   className={this.isCurrentSelected('model-r') ? 'MenuItemSelected' : 'MenuItem'}
+                                   href="#">Model R</a>
+                            </li>
+
+                            <li>
+                                <a onClick={() => this.onClick('model-iq')}
+                                   className={this.isCurrentSelected('model-iq') ? 'MenuItemSelected' : 'MenuItem'}
+                                   href="#">Model IQ</a>
+                            </li>
+
+                            <li>
+                                <a onClick={() => this.onClick('model-mobi')}
+                                   className={this.isCurrentSelected('model-mobi') ? 'MenuItemSelected' : 'MenuItem'}
+                                   href="#">Model Mobi</a>
+                            </li>
+
+                            <li>
+                                <a onClick={() => this.onClick('model-charlie')}
+                                   className={this.isCurrentSelected('model-charlie') ? 'MenuItemSelected' : 'MenuItem'}
+                                   href="#">Model Charlie</a>
+                            </li>
+
+                            <li>
+                                <a onClick={() => this.onClick('model-italy')}
+                                   className={this.isCurrentSelected('model-italy') ? 'MenuItemSelected' : 'MenuItem'}
+                                   href="#">Model Italy</a>
+                            </li>
                         </ul>
                     </nav>
                 </Col>

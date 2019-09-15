@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './Footer.css';
 import arrow from '../../images/red-arrow.png';
 import Row from 'react-bootstrap/Row';
@@ -20,6 +20,7 @@ const colors = {
     5: Blue,
     6: Grey
 };
+
 class Footer extends Component {
     render() {
         let totalPrice = this.props.model.price
@@ -29,8 +30,8 @@ class Footer extends Component {
         if (this.props.model.color) {
             totalPrice = totalPrice + this.props.model.color.price
         }
-         if (this.props.model.wheel) {
-             totalPrice = totalPrice + this.props.model.wheel.price
+        if (this.props.model.wheel) {
+            totalPrice = totalPrice + this.props.model.wheel.price
         }
 
         return (
@@ -39,15 +40,15 @@ class Footer extends Component {
                     <div className="FooterItem">
                         <span className='TotalLabel'>Total</span>
                         <span className='TotalValue'>$
-                        {totalPrice}</span>
+                            {totalPrice}</span>
                     </div>
                 </Col>
-                <Col xs className='FooterIntemContainer'>
+                <Col xs className='FooterIntemContainer InvisibleWhenMobile'>
                     <div className="FooterItem">
                         <span className='Model'>Model R</span>
                     </div>
                 </Col>
-                <Col xs className='FooterIntemContainer'>
+                <Col xs className='FooterIntemContainer InvisibleWhenMobile'>
 
                     {this.props.model.engine ?
                         <div className="FooterItem">
@@ -56,26 +57,26 @@ class Footer extends Component {
                         </div>
                         : null}
                 </Col>
-                <Col xs className='FooterIntemContainer'>
+                <Col xs className='FooterIntemContainer InvisibleWhenMobile'>
 
                     {this.props.model.color ?
                         <div className="FooterItem">
-                            <img className='ColorSize' src={colors[this.props.model.color.id]} />
+                            <img className='ColorSize' src={colors[this.props.model.color.id]}/>
                         </div>
                         : null}
                 </Col>
-                <Col xs className='FooterIntemContainer'>
+                <Col xs className='FooterIntemContainer InvisibleWhenMobile'>
                     {this.props.model.wheel ?
                         <div className="FooterItem">
-                            <img className='Wheels' src={wheels[this.props.model.wheel.id]} />
+                            <img className='Wheels' src={wheels[this.props.model.wheel.id]}/>
                         </div>
                         : null}
                 </Col>
                 <Col xs className='FooterIntemContainer'>
                     <div className="FooterItem FooterItemRightPositioned">
-                        <button onClick={this.props.goToNextScreen}>
+                        <button className='StyleButton' onClick={this.props.goToNextScreen}>
                             <span className='Next'>next</span>
-                            <img className='Arrow' src={arrow} />
+                            <img className='Arrow' src={arrow}/>
                         </button>
                     </div>
                 </Col>
@@ -85,4 +86,5 @@ class Footer extends Component {
         );
     }
 }
+
 export default Footer;

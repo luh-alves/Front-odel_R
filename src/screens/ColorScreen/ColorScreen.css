@@ -6,16 +6,21 @@
 .ColorText {
     font-family: 'SairaCondensed-Light', sans-serif;
     color: #0f1c2d;
+    letter-spacing: 0.1em;
 
 }
 
-.ColorImageCar {
+.ColorCarContainer {
     margin-top: -8rem;
+}
+
+.ColorCar {
+    width: 500px;
+    height: 282px;
 }
 
 .ColorText p {
     color: #a8a8a8;
-
 }
 
 .ColorImagesContainer {
@@ -23,7 +28,9 @@
     cursor: pointer;
     user-select: none;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    width: 90%;
+    padding: 1rem;
 }
 
 .ColorImagesContainer img {
@@ -39,4 +46,72 @@
 .ColorWithBorderSelected {
     border: 6px solid #545555;
     border-radius: 100%;
+}
+
+.ColorCarDescription {
+    margin-left: 20%;
+    margin-top: -4rem;
+}
+
+.ColorCarPrice {
+    color: #AB1725;
+}
+
+@media (max-width: 1200px) {
+    .ColorCarContainer {
+        margin-left: -5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .ColorCarContainer {
+        margin-left: -10rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .ColorCarContainer {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .ColorCar {
+        width: 450px;
+        height: 255px;
+    }
+
+    .ColorImagesContainer {
+        width: 100%;
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .ColorCarDescription {
+        display: table;
+        margin: -4rem auto 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .ColorImagesContainer {
+        margin-bottom: 4rem;
+    }
+}
+
+@media (max-width: 486px) {
+    .ColorCar {
+        width: 400px;
+        height: 226px;
+    }
+}
+
+@media (max-width: 376px) {
+    .ColorCar {
+        width: 350px;
+        height: 197px;
+    }
+
+    .ColorCarDescription {
+        margin-top: -2rem;
+    }
 }

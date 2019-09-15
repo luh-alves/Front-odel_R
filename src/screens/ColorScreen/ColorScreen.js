@@ -36,7 +36,9 @@ class ColorScreen extends Component {
         return (
             <div className="Color">
                 <Row>
-                    <Col md={{span: 4, offset: 7}}>
+                    <Col xs className="InvisibleWhenMobile">
+                    </Col>
+                    <Col xs>
                         <div className="ColorText">
                             <h2> Color</h2>
                             <p>{this.props.description}</p>
@@ -45,11 +47,14 @@ class ColorScreen extends Component {
                 </Row>
                 <Row>
                     <Col xs>
-                        <div className="ColorImageCar">
+                        <div className="ColorCarContainer">
                             <figure>
-                                <img className='ColorCarRed' src={this.state.colorCar}/>
-                                <figcaption>{this.state.color.label}</figcaption>
-                                <figcaption> {this.isPriceZero() ? 'Included' : this.state.color.price}</figcaption>
+                                <img className='ColorCar' src={this.state.colorCar}/>
+                                <div className='ColorCarDescription'>
+                                    <figcaption>{this.state.color.label}</figcaption>
+                                    <figcaption
+                                        className=' ColorCarPrice'> {this.isPriceZero() ? 'Included' : ('+$' + this.state.color.price)}</figcaption>
+                                </div>
                             </figure>
                         </div>
 

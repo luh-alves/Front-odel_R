@@ -1,5 +1,6 @@
 .RadioLayout {
     margin-bottom: 3rem;
+    font-family: 'SairaCondensed-Regular', sans-serif;
 
 }
 
@@ -52,12 +53,12 @@
 }
 
 /* On mouse-over, add a grey background color */
-.RadioContainer:hover input~.Checkmark {
+.RadioContainer:hover input ~ .Checkmark {
     background-color: #eee;
 }
 
 /* When the radio button is checked, add a blue background */
-.RadioContainer input:checked~.Checkmark {
+.RadioContainer input:checked ~ .Checkmark {
     background-color: #AB1725;
 }
 
@@ -69,7 +70,7 @@
 }
 
 /* Show the indicator (dot/circle) when checked */
-.RadioContainer input:checked~.Checkmark:after {
+.RadioContainer input:checked ~ .Checkmark:after {
     display: block;
 }
 

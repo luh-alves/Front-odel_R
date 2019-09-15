@@ -41,38 +41,38 @@ class WheelScreen extends Component {
                         <div className="WheelsContainer">
                             <div>
                                 <img onClick={() => this.updateWheelSelection(this.props.wheels[0])}
-                                     className={this.isCurrentSelected(this.props.wheels[0]) ? 'WheelSelected' : 'WheelNotSelected'}
+                                     className={this.isCurrentSelected(this.props.wheels[0]) ? 'WheelItem WheelSelected' : 'WheelItem WheelNotSelected'}
                                      src={WheelSilver}/>
 
                                 <div className={this.isCurrentSelected(this.props.wheels[0]) ?
                                     'CaptionSelected' : 'CaptionNotSelected'}>
-                                    <figcaption>{this.props.wheels[0].label}</figcaption>
-                                    <figcaption>Included</figcaption>
+                                    <figcaption className='ColorWheelLabel'>{this.props.wheels[0].label}</figcaption>
+                                    <figcaption className='ColorWheelPrice'>Included</figcaption>
                                 </div>
                             </div>
 
                             <div>
                                 <img onClick={() => this.updateWheelSelection(this.props.wheels[1])}
-                                     className={this.isCurrentSelected(this.props.wheels[1]) ? 'WheelSelected' : 'WheelNotSelected'}
+                                     className={this.isCurrentSelected(this.props.wheels[1]) ? 'WheelItem WheelSelected' : 'WheelItem WheelNotSelected'}
                                      src={WheelGrafitti}/>
 
                                 <div className={this.isCurrentSelected(this.props.wheels[1]) ?
                                     'CaptionSelected' : 'CaptionNotSelected'}>
 
-                                    <figcaption>{this.props.wheels[1].label}</figcaption>
-                                    <figcaption>{this.props.wheels[1].price}</figcaption>
+                                    <figcaption className='ColorWheelLabel'>{this.props.wheels[1].label}</figcaption>
+                                    <figcaption className='ColorWheelPrice'>{'+$' +this.props.wheels[1].price}</figcaption>
                                 </div>
                             </div>
 
                             <div>
                                 <img onClick={() => this.updateWheelSelection(this.props.wheels[2])}
-                                     className={this.isCurrentSelected(this.props.wheels[2]) ? 'WheelSelected' : 'WheelNotSelected'}
+                                     className={this.isCurrentSelected(this.props.wheels[2]) ? 'WheelItem WheelSelected' : 'WheelItem WheelNotSelected'}
                                      src={WheelPerformance}/>
 
                                 <div className={this.isCurrentSelected(this.props.wheels[2]) ?
                                     'CaptionSelected' : 'CaptionNotSelected'}>
-                                    <figcaption>{this.props.wheels[2].label}</figcaption>
-                                    <figcaption>{this.props.wheels[2].price}</figcaption>
+                                    <figcaption className='ColorWheelLabel' >{this.props.wheels[2].label}</figcaption>
+                                    <figcaption className='ColorWheelPrice'>{ '+$' +this.props.wheels[2].price}</figcaption>
                                 </div>
                             </div>
 

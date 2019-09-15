@@ -15,12 +15,14 @@
 .FooterItem {
     color: #0f1c2d;
     text-decoration: none;
-    font-family: 'SairaCondensed-Light', sans-serif;
+    font-family: 'SairaCondensed-Regular', sans-serif;
 }
-.Model{
+
+.Model {
     font-size: 1em;
 }
-.Next{
+
+.Next {
     font-size: 1.1em;
 }
 
@@ -43,15 +45,22 @@
 
 .TotalLabel {
     display: block;
-    font-size: 1em;
+    font-size: 0.8em;
 }
 
 .TotalValue {
     display: block;
     color: #ab1725;
     font-size: 1.3em;
-    font-family: 'SairaCondensed-Medium', sans-serif;
+    font-family: 'SairaCondensed-Regular', sans-serif;
 }
-.FooterEngineType{
-    color: #ab1725;  
+
+.FooterEngineType {
+    color: #ab1725;
+}
+
+@media (max-width: 768px) {
+    .InvisibleWhenMobile {
+        display: none;
+    }
 }
